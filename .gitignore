@@ -19,7 +19,7 @@ coverage
 .helmignore
 .vscode
 github_token
-helm/**/*.tgz
 jsHelper.js
 .dockerignore
 .pytest_cache/*
+/charts/vios-servicebroker2/charts/
