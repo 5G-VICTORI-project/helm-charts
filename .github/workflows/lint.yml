@@ -1,11 +1,6 @@
 name: Linting & Integration tests
 
-on:
-  pull_request:
-   types:
-    - opened
-    - synchronize
-    - reopened
+on: [workflow_dispatch]
 
 defaults:
   run:
