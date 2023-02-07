@@ -3,6 +3,7 @@
 *.swp
 *.pem
 .idea
+*.tgz
 py3env/
 __pycache__
 htmlcov/

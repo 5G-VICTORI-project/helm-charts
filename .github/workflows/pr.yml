@@ -39,7 +39,6 @@ jobs:
     - name: Install additional Helm repos
       run: |
         helm repo add bitnami https://charts.bitnami.com/bitnami
-        helm repo add 5g-vios https://5g-victori-project.github.io/vios-helmcharts
 
     - name: Run chart-testing (list-changed)
       id: list-changed

@@ -26,7 +26,6 @@ jobs:
       - name: Install additional Helm repos
         run: |
           helm repo add bitnami https://charts.bitnami.com/bitnami
-          helm repo add digicatapult https://5g-victori-project.github.io/helm-charts
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1
         env:

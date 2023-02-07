@@ -65,13 +65,10 @@ config:
 
 image:
   # repository is the online location of the Docker image
-  repository: ghcr.io/5g-victori-project/vios-servicebroker2
+  repository: digicatapult/vios-servicebroker
 
   # pullPolicy is the flag to determine how images are pulled
   pullPolicy: Always
 
   # tag is the version to use
-  tag: latest
-
-  # pullSecrets is the secret key to use to connect to Github
-  pullSecrets: ['ghcr-5g-victori']
+  tag: 0.1.0
