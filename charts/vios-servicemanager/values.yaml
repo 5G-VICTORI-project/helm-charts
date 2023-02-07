@@ -1,0 +1,84 @@
+postgresql:
+  # enabled is the flag to indicate of postgresql is to be used
+  enabled: true
+
+  # postgresqlDatabase is the database name to use
+  postgresqlDatabase: servicemanager
+
+  # postgresqlUsername is the username to use
+  postgresqlUsername: viosuser
+
+  # postgresqlPassword is the password for the user
+  postgresqlPassword: viospassword
+
+config:
+  # replicaCount is the number of replicas to use
+  replicaCount: 1
+
+  # appPort is the Django application port
+  appPort: 8000
+
+  # NodePort is the type of service
+  type: NodePort
+
+  # NodePort is the port the application should use in the cluster
+  nodePort: 30313
+
+  # debug is the debug flag
+  debug: "True"
+
+  # logLevel denotes the level of logging required
+  logLevel: DEBUG
+
+  # sbrHost is the endpoint name for the ServiceBroker
+  sbrHost: servicebroker
+
+  # sbrPort is the port to connect to the ServiceBroker
+  sbrPort: 8000
+
+  # scoHost is the endpoint name for the ServiceComposer
+  scoHost: servicecomposer
+
+  # scoPort is the port to connect to the ServiceComposer
+  scoPort: 8000
+
+  # icmHost is the endpoint name for the ConnectivityManager
+  icmHost: connectivitymanager
+
+  # icmPort is the port on which to connect to the ConnectivityManager
+  icmPort: 8000
+
+  # proHost is the endpoint name for the Profiler
+  proHost: profiler
+
+  # proPort is the port on which to connect to the Profiler
+  proPort: 8000
+
+  # systemEnv is the flag to denote the type of deployment environment
+  systemEnv: KUBERNETES
+
+image:
+  # repository is the online location of the Docker image
+  repository: digicatapult/vios-servicemanager
+
+  # pullPolicy is the flag to determine how images are pulled
+  pullPolicy: Always
+
+  # tag is the version to use
+  tag: 0.1.0
+
+autoscaling:
+  # enabled specifies whether autoscaling should be enabled
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
