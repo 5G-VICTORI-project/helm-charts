@@ -1,0 +1,16 @@
+apiVersion: v2
+name: edgeproxy
+description: A Helm chart for 5g-vios edgeproxy deployment on kubernetes
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+maintainers:
+  - name: CDECatapult
+    email: opensource@digicatapult.org.uk
+    url: www.digicatapult.org.uk
+
+dependencies:
+  - name: postgresql
+    version: "10.9.4"
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled

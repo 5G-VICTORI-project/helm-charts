@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "mobilitymanager.fullname" . }}-test-connection"
+  labels:
+    {{- include "mobilitymanager.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "mobilitymanager.fullname" . }}:{{ .Values.config.appPort }}']
+  restartPolicy: Never

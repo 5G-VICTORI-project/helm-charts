@@ -1,0 +1,16 @@
+apiVersion: v2
+name: monitoring
+appVersion: 0.1.14
+description: A generated Helm Chart for 5g-vios monitoring
+version: 0.0.1
+type: application
+maintainers:
+  - name: CDECatapult
+    email: opensource@digicatapult.org.uk
+    url: www.digicatapult.org.uk
+
+dependencies:
+  - condition: mongodb.enabled
+    name: mongodb
+    version: 13.x.x
+    repository: https://charts.bitnami.com/bitnami

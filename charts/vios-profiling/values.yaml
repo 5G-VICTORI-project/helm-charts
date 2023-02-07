@@ -1,0 +1,59 @@
+postgresql:
+  # enabled is the flag to indicate of postgresql is to be used
+  enabled: true
+
+  # postgresqlDatabase is the database name to use
+  postgresqlDatabase: profiler
+
+  # postgresqlUsername is the username to use
+  postgresqlUsername: viosuser
+
+  # postgresqlPassword is the password for the user
+  postgresqlPassword: viospassword
+
+config:
+  # replicaCount is the number of replicas to use
+  replicaCount: 1
+
+  # appPort is the application port
+  appPort: 8000
+
+  # NodePort is the type of service
+  type: NodePort
+
+  # NodePort is the port the application should use in the cluster
+  nodePort: 32338
+
+  # debug is the debug flag
+  debug: "True"
+
+  # logLevel denotes the level of logging required
+  logLevel: DEBUG
+
+  # systemEnv is the flag to denote the type of deployment environment
+  systemEnv: KUBERNETES
+
+  # smaHost is the endpoint name for the ServiceManager
+  smaHost: servicemanager
+
+  # smaPort is the port to connect to the ServiceManager
+  smaPort: 8000
+
+  # monHost is the endpoint name for Monitoring
+  monHost: monitoring
+
+  # monPort is the port to connect to Monitoring
+  monPort: 8000
+
+image:
+  # repository is the online location of the Docker image
+  repository: ghcr.io/5g-victori-project/vios-profiling
+
+  # pullPolicy is the flag to determine how images are pulled
+  pullPolicy: Always
+
+  # tag is the version to use
+  tag: latest
+
+  # pullSecrets is the secret key to use to connect to Github
+  pullSecrets: ['ghcr-5g-victori']
