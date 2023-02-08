@@ -1,15 +1,10 @@
 postgresql:
   # enabled is the flag to indicate of postgresql is to be used
   enabled: true
-
-  # postgresqlDatabase is the database name to use
-  postgresqlDatabase: servicebroker
-
-  # postgresqlUsername is the username to use
-  postgresqlUsername: sbuser
-
-  # postgresqlPassword is the password for the user
-  postgresqlPassword: sbpassword
+  auth:
+    username: sbuser
+    password: sbpassword
+    database: servicebroker
 
 config:
   # replicaCount is the number of replicas to use
