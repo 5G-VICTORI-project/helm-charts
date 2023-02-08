@@ -71,4 +71,4 @@ image:
   pullPolicy: Always
 
   # tag is the version to use
-  tag: 0.1.0
+  tag: 0.1.1
