@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "servicecomposer.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.config.replicaCount }}
-  # {{- end }}
   selector:
     matchLabels:
       name: {{ include "servicecomposer.fullname" . }}-app

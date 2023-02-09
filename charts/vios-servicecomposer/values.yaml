@@ -1,5 +1,5 @@
 postgresql:
-  # enabled is the flag to indicate of postgresql is to be used
+  # enabled is the flag to indicate if postgresql is to be used
   enabled: true
   auth:
     username: viosuser

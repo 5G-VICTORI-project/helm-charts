@@ -11,4 +11,3 @@ data:
   DB_HOST: {{ include "servicecomposer.postgresql.fullname" . }}
   DB_PORT: {{ .Values.config.dbPort | quote }}
   DB_NAME: {{ .Values.config.dbName | quote }}
-  DB_USERNAME: {{ .Values.postgresql.auth.username }}
