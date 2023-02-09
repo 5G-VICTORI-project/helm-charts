@@ -1,0 +1,85 @@
+postgresql:
+  # enabled is the flag to indicate of postgresql is to be used
+  enabled: true
+  auth:
+    username: viosuser
+    password: viospassword
+    database: mobilitymanager
+
+config:
+  # replicaCount is the number of replicas to use
+  replicaCount: 1
+
+  # appPort is the application port
+  appPort: 8000
+
+  # NodePort is the type of service
+  type: NodePort
+
+  # NodePort is the port the application should use in the cluster
+  nodePort: 30500
+
+  # debug is the debug flag
+  debug: "True"
+
+  # logLevel denotes the level of logging required
+  logLevel: DEBUG
+
+  # smaHost is the endpoint name for the ServiceManager
+  smaHost: servicemanager
+
+  # smaPort is the port on which to connect to the ServiceManager
+  smaPort: 8000
+
+  # agaHost is the endpoint name for the ApiGateway
+  agaHost: apigateway
+
+  # agaPort is the port on which to connect to the ApiGateway
+  agaPort: 8000
+
+  # scoHost is the endpoint name for the ServiceComposer
+  scoHost: servicecomposer
+
+  # repPort is the port on which to connect to the ServiceComposer
+  scoPort: 8000
+
+  # repHost is the endpoint name for the Respository
+  repHost: repository
+
+  # repPort is the port on which to connect to the Repository
+  repPort: 8000
+
+  # sbrHost is the endpoint name for the ServiceBroker
+  sbrHost: servicebroker
+
+  # sbrPort is the port to connect to the ServiceBroker
+  sbrPort: 8000
+
+  # systemEnv is the flag to denote the type of deployment environment
+  systemEnv: KUBERNETES
+
+image:
+  # repository is the online location of the Docker image
+  repository: digicatapult/vios-mobilitymanager
+
+  # pullPolicy is the flag to determine how images are pulled
+  pullPolicy: Always
+
+  # tag is the version to use
+  tag: 0.1.1
+
+autoscaling:
+  # enabled specifies whether autoscaling should be enabled
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
