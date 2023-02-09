@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mobilitymanager.fullname" . }}-app
+  labels:
+    {{- include "mobilitymanager.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.config.replicaCount }}
+  selector:
+    matchLabels:
+      name: {{ include "mobilitymanager.fullname" . }}-app
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/mob-configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/mob-secrets.yaml") . | sha256sum }}
+      labels:
+        name: {{ include "mobilitymanager.fullname" . }}-app
+    spec:
+      {{- include "mobilitymanager.imagePullSecrets" . | indent 6 }}
+      containers:
+        - name: {{ include "mobilitymanager.fullname" . }}-app
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+          ports:
+            - containerPort: {{ .Values.config.appPort }}
+          envFrom:
+          - configMapRef:
+              name: {{ include "mobilitymanager.fullname" . }}-config
+          - secretRef:
+              name: {{ include "mobilitymanager.fullname" . }}-secret
+          env:
+            - name: HOST_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
