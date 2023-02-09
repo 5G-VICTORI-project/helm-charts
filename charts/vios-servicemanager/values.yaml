@@ -1,15 +1,10 @@
 postgresql:
   # enabled is the flag to indicate of postgresql is to be used
   enabled: true
-
-  # postgresqlDatabase is the database name to use
-  postgresqlDatabase: servicemanager
-
-  # postgresqlUsername is the username to use
-  postgresqlUsername: viosuser
-
-  # postgresqlPassword is the password for the user
-  postgresqlPassword: viospassword
+  auth:
+    username: viosuser
+    password: viospassword
+    database: servicemanager
 
 config:
   # replicaCount is the number of replicas to use
@@ -65,7 +60,7 @@ image:
   pullPolicy: Always
 
   # tag is the version to use
-  tag: 0.1.0
+  tag: 0.1.1
 
 autoscaling:
   # enabled specifies whether autoscaling should be enabled
