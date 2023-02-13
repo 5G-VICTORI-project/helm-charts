@@ -38,6 +38,25 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/mobilitymanager-0.0.2/mobilitymanager-0.0.2.tgz
     version: 0.0.2
+  portal:
+  - apiVersion: v2
+    appVersion: 0.2.14
+    created: "2023-02-13T11:00:44.116379008Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios portal
+    digest: d00a7b33f0f385736f8e44b38d9ec259e2c46e510df67e94ff43473b1720b50b
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: portal
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/portal-0.1.1/portal-0.1.1.tgz
+    version: 0.1.1
   profiler:
   - apiVersion: v2
     appVersion: 0.2.14
@@ -208,4 +227,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-10T16:35:20.888462003Z"
+generated: "2023-02-13T11:00:44.116397008Z"
