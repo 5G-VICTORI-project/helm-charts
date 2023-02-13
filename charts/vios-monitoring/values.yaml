@@ -29,7 +29,7 @@ config:
   # replicaCount is the number of replicas to use
   replicaCount: 1
 
-  # appPort is the Django application port
+  # appPort is the application port
   appPort: 8000
 
   # NodePort is the type of service
@@ -44,10 +44,10 @@ config:
   # dbPort is the database port to be used for the service
   dbPort: 27017
 
-  # dbEngine is the Django database engine to use
+  # dbEngine is the database engine to use
   dbEngine: mongodb
 
-  # debug is the Django debug flag
+  # debug is the debug flag
   debug: "True"
 
   # logLevel denotes the level of logging required
@@ -64,16 +64,13 @@ config:
 
 image:
   # repository is the online location of the Docker image
-  repository: ghcr.io/5g-victori-project/vios-monitoring
+  repository: digicatapult/vios-monitoring
 
   # pullPolicy is the flag to determine how images are pulled
   pullPolicy: Always
 
   # tag is the version to use
-  tag: latest
-
-  # pullSecrets is the secret key to use to connect to Github
-  pullSecrets: ['ghcr-5g-victori']
+  tag: 0.1.0
 
 autoscaling:
   # enabled specifies whether autoscaling should be enabled
