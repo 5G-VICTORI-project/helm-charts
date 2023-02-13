@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "monitoring.fullname" . }}-config
+  labels:
+    {{- include "monitoring.labels" . | nindent 4 }}
+data:
+  MONGO_DEBUG: {{ .Values.config.debug | quote }}
+  DB_ENGINE: {{ .Values.config.dbEngine | quote }}
+  DB_HOST: {{ include "monitoring.mongodb.fullname" . }}
+  DB_PORT: {{ .Values.config.dbPort | quote }}
+  DB_NAME: {{ .Values.config.dbName | quote }}
+  VIOS_AGA_HOST: {{ .Values.config.agaHost | quote }}
+  VIOS_AGA_PORT: {{ .Values.config.agaPort | quote }}
+  SYSTEM_ENV: {{ .Values.config.systemEnv | quote }}
