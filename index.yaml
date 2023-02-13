@@ -57,6 +57,25 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/portal-0.1.1/portal-0.1.1.tgz
     version: 0.1.1
+  portalfilestorage:
+  - apiVersion: v2
+    appVersion: 0.2.14
+    created: "2023-02-13T13:00:03.718833883Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios portalfilestorage
+    digest: 4a93ceb13f7b8c0c68f1491ae548cba6d5471c58691545761a1a2cde18a7f4f4
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: portalfilestorage
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/portalfilestorage-0.1.1/portalfilestorage-0.1.1.tgz
+    version: 0.1.1
   profiler:
   - apiVersion: v2
     appVersion: 0.2.14
@@ -227,4 +246,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-13T11:00:44.116397008Z"
+generated: "2023-02-13T13:00:03.718854783Z"
