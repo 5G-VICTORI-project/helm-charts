@@ -1,0 +1,89 @@
+mongodb:
+  ## @param mongodb.enabled Whether to install or not the MongoDB&reg; chart
+  ## To use an external database set this to false and configure the externaldb parameters
+  ##
+  enabled: true
+  ## MongoDB&reg; Authentication parameters
+  ##
+  auth:
+    ## @param mongodb.auth.enabled Whether to enable auth or not for the MongoDB&reg; chart
+    ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
+    ##
+    enabled: false
+    ## @param mongodb.auth.rootPassword MongoDB&reg; admin password
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mongodb#setting-the-root-password-on-first-run
+    ##
+    rootPassword: ""
+    ## @param mongodb.auth.username MongoDB&reg; custom user
+    ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mongodb#creating-a-user-and-database-on-first-run
+    ##
+    username: viosuser
+    ## @param mongodb.auth.database MongoDB&reg; custom database
+    ##
+    database: monitoring
+    ## @param mongodb.auth.password MongoDB&reg; custom password
+    ##
+    password: viospassword
+
+config:
+  # replicaCount is the number of replicas to use
+  replicaCount: 1
+
+  # appPort is the application port
+  appPort: 8000
+
+  # NodePort is the type of service
+  type: NodePort
+
+  # NodePort is the port the application should use in the cluster
+  nodePort: 30020
+
+  # dbName is the database name for the service
+  dbName: monitoring
+
+  # dbPort is the database port to be used for the service
+  dbPort: 27017
+
+  # dbEngine is the database engine to use
+  dbEngine: mongodb
+
+  # debug is the debug flag
+  debug: "True"
+
+  # logLevel denotes the level of logging required
+  logLevel: DEBUG
+
+  # agaHost is the endpoint name for the ApiGateway
+  agaHost: apigateway
+
+  # agaPort is the port on which to connect to the ApiGateway
+  agaPort: 8000
+
+  # systemEnv is the flag to denote the type of deployment environment
+  systemEnv: KUBERNETES
+
+image:
+  # repository is the online location of the Docker image
+  repository: digicatapult/vios-monitoring
+
+  # pullPolicy is the flag to determine how images are pulled
+  pullPolicy: Always
+
+  # tag is the version to use
+  tag: 0.1.0
+
+autoscaling:
+  # enabled specifies whether autoscaling should be enabled
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
