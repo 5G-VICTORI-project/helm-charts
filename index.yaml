@@ -60,6 +60,24 @@ entries:
   portal:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-02-13T15:48:18.433187453Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios portal
+    digest: 7c6be2bf61703de33ede0b071a0b2fbed80e8010e93b0b5c356233b8d891d58d
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: portal
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/portal-0.1.2/portal-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-02-13T11:00:44.116379008Z"
     dependencies:
     - condition: postgresql.enabled
@@ -265,4 +283,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-13T15:39:01.766165696Z"
+generated: "2023-02-13T15:48:18.433230153Z"
