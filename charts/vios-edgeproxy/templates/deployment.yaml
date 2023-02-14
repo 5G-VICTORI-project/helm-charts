@@ -28,22 +28,20 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+            - containerPort: {{ .Values.config.appPort }}
           envFrom:
           - configMapRef:
               name: {{ include "edgeproxy.fullname" . }}-config
           - secretRef:
               name: {{ include "edgeproxy.fullname" . }}-secret
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+#          livenessProbe:
+#            httpGet:
+#              path: /
+#              port: http
+#          readinessProbe:
+#            httpGet:
+#              path: /
+#              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
