@@ -7,7 +7,7 @@ postgresql:
 
 config:
   replicaCount: 1
-  appPort: 3001
+  appPort: 8000
   type: NodePort
   extAppPort: 30001
   dbPort: 5432
