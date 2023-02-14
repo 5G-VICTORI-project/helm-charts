@@ -1,0 +1,68 @@
+postgresql:
+  enabled: true
+  auth:
+    username: viosuser
+    password: viospassword
+    database: edgeproxy
+
+config:
+  replicaCount: 1
+  appPort: 8000
+  type: NodePort
+  extAppPort: 30001
+  dbPort: 5432
+  debug: "True"
+  logLevel: DEBUG
+  vlanStart: 143
+  vlanEnd: 144
+  openstackServer: ""
+  openstackUser: 5gvictori-user
+  openstackPassword: ""
+  openstackDomain: default
+  openstackProject: 5G-VICTORI
+  openstackNetworkType: vlan
+  openstackNetworkProvider: 5GVICTORI
+  openstackMgmtNetwork: 5G-VICTORI-Management
+  openstackUoBDns: ""
+  vyosServer: ""
+  vyosEthernetPort: eth0
+  vyosInstanceName: ""
+  vyosKey: demo_key
+  osmVersion: 10
+  osmServer: ""
+  osmUsername: admin
+  osmPasswd: admin
+  osmProject: admin
+  apigatewayHost: ""
+  apigatewayPort: 30007
+  vimAccount: ""
+  netosAddr: ""
+  netosCertPath: "False"
+  netosUser: admin
+  netosPassword: admin
+  appPort: 3001
+  appEndpoint: api/application/
+  epaServerIp: ""
+  dnsServerIp: ""
+  dnsServerPort: 80
+  i2SmIp: ""
+  i2SmPort: 30989
+
+image:
+  repository: digicatapult/vios-edgeproxy
+  pullPolicy: Always
+  tag: 0.1.0
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
+ingress:
+  enabled: false
