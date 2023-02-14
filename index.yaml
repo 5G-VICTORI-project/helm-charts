@@ -19,6 +19,25 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/apigateway-0.0.2/apigateway-0.0.2.tgz
     version: 0.0.2
+  edgeproxy:
+  - apiVersion: v2
+    appVersion: 0.2.14
+    created: "2023-02-14T16:38:06.293499364Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios edgeproxy
+    digest: 5167510050fc64282c2d4dfa50d91ef328cec6472f9189f6bdc20569d6965ac3
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: edgeproxy
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/edgeproxy-0.0.2/edgeproxy-0.0.2.tgz
+    version: 0.0.2
   mobilitymanager:
   - apiVersion: v2
     appVersion: 0.2.14
@@ -337,4 +356,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-14T14:34:11.334425396Z"
+generated: "2023-02-14T16:38:06.293523864Z"
