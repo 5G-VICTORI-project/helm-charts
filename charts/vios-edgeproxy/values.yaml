@@ -7,7 +7,7 @@ postgresql:
 
 config:
   replicaCount: 1
-  appPort: 8000
+  appPort: 3001
   type: NodePort
   extAppPort: 30001
   dbPort: 5432
@@ -40,7 +40,6 @@ config:
   netosCertPath: "False"
   netosUser: admin
   netosPassword: admin
-  appPort: 3001
   appEndpoint: api/application/
   epaServerIp: ""
   dnsServerIp: ""
