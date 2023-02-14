@@ -12,3 +12,4 @@ A collection of [helm](https://helm.sh) charts created by Digital Catapult for i
 * [portal](charts/vios-portal/Chart.yaml) - Deploy the Portal microservice
 * [portalfilestorage](charts/vios-portalfilestorage/Chart.yaml) - Deploy the Portalfilestorage microservice
 * [monitoring](charts/vios-monitoring/Chart.yaml) - Deploy the Monitoring microservice
+* [edgeproxy](charts/vios-edgeproxy/Chart.yaml) - Deploy the EdgeProxy microservice
