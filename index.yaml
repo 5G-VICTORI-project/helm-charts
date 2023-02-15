@@ -22,6 +22,24 @@ entries:
   connectivitymanager:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-02-15T11:47:05.724598128Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios connectivitymanager
+    digest: f798202e8aacc379ff7b35b8b9ff2a00194a50353afb2f802ff24a1573b9379b
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: connectivitymanager
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/connectivitymanager-0.0.4/connectivitymanager-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-02-15T11:26:23.900477456Z"
     dependencies:
     - condition: postgresql.enabled
@@ -393,4 +411,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-15T11:26:23.900635256Z"
+generated: "2023-02-15T11:47:05.724634128Z"
