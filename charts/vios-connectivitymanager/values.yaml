@@ -1,6 +1,5 @@
 postgresql:
   enabled: true
-  host: icm-db:5432
   auth:
     username: postgres
     password: postgres
