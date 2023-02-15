@@ -18,24 +18,22 @@ spec:
         name: {{ include "servicebroker.fullname" . }}-app
     spec:
       {{- include "servicebroker.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "servicebroker.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '30']
       containers:
         - name: {{ include "servicebroker.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           ports:
             - containerPort: {{ .Values.config.appPort }}
-          # readinessProbe:
-          #   httpGet:
-          #     path: /api/sbr/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 15
-          # livenessProbe:
-          #   httpGet:
-          #     path: /api/sbr/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   timeoutSeconds: 15
-          #   periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /api/sbr/healthchecks/readiness
+              port: {{ .Values.config.appPort }}
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 15
           envFrom:
           - configMapRef:
               name: {{ include "servicebroker.fullname" . }}-config
