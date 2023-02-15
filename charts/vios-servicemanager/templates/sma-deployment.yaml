@@ -18,25 +18,23 @@ spec:
         name: {{ include "servicemanager.fullname" . }}-app
     spec:
       {{- include "servicemanager.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "servicemanager.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '30']
       containers:
         - name: {{ include "servicemanager.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           ports:
             - containerPort: {{ .Values.config.appPort }}
-          # readinessProbe:
-          #   httpGet:
-          #     path: /api/sma/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 15
-          # livenessProbe:
-          #   httpGet:
-          #     path: /api/sma/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   timeoutSeconds: 15
-          #   periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /api/sma/healthchecks/readiness
+              port: {{ .Values.config.appPort }}
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 15
           envFrom:
           - configMapRef:
               name: {{ include "servicemanager.fullname" . }}-config
