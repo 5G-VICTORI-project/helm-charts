@@ -1,9 +1,9 @@
 postgresql:
   enabled: true
   auth:
-    username: postgres
-    password: postgres
-    database: postgres
+    username: viosuser
+    password: viospassword
+    database: connectivitymanager
 
 config:
   replicaCount: 1
