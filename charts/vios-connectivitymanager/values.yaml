@@ -1,10 +1,10 @@
 postgresql:
   enabled: true
-  host: "icm-db:5432"
+  host: icm-db:5432
   auth:
-    username: viosuser
-    password: viospassword
-    database: connectivitymanager
+    username: postgres
+    password: postgres
+    database: postgres
 
 config:
   replicaCount: 1

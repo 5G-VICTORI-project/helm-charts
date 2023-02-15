@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "connectivitymanager.labels" . | nindent 4 }}
 data:
-  POSTGRES_SERVER: {{ include "connectivitymanager.postgresql.fullname" . }}
+  POSTGRES_SERVER: {{ .Values.postgresql.host | quote }}
   POSTGRES_DB: {{ .Values.postgresql.auth.database | quote }}
   SMA_HOST: {{ .Values.config.smaHost | quote }}
   SMA_PORT: {{ .Values.config.smaPort | quote }}
