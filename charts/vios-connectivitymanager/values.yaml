@@ -1,5 +1,6 @@
 postgresql:
   enabled: true
+  host: "icm-db:5432"
   auth:
     username: viosuser
     password: viospassword
@@ -9,7 +10,7 @@ config:
   replicaCount: 1
   appPort: 8000
   type: NodePort
-  nodePort: 32570
+  nodePort: 30101
   dbPort: 5432
   debug: "True"
   logLevel: DEBUG

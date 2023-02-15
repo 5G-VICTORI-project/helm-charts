@@ -89,31 +89,3 @@ imagePullSecrets:
     {{- end }}
   {{- end }}
 {{- end -}}
-
-{{/*
-Create a default fully qualified redis name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-*/}}
-{{- define "connectivitymanager.redis.fullname" -}}
-{{- if .Values.config.externalRedis -}}
-{{ .Values.config.externalRedis | trunc 63 | trimSuffix "-" -}}
-{{- else if not ( .Values.redis.enabled ) -}}
-{{ fail "Redis must either be enabled or passed via config.externalRedis" }}
-{{- else if .Values.redis.fullnameOverride -}}
-{{- .Values.redis.fullnameOverride | trunc 63 | trimSuffix "-" -}}
-{{- else -}}
-{{- $name := default "redis-master" .Values.redis.nameOverride -}}
-{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
-If no redis username is provided then give "default"
-*/}}
-{{- define "connectivitymanager.redis.username" -}}
-{{- if .Values.config.redisUsername -}}
-{{ .Values.config.redisUsername | quote -}}
-{{- else -}}
-"default"
-{{- end -}}
-{{- end -}}
