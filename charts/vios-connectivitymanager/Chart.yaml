@@ -2,7 +2,7 @@ apiVersion: v2
 name: connectivitymanager
 appVersion: 0.2.14
 description: A generated Helm Chart for 5g-vios connectivitymanager
-version: 0.0.4
+version: 0.0.5
 type: application
 maintainers:
   - name: 5g-victori-project

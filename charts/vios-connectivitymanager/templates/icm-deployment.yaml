@@ -18,6 +18,10 @@ spec:
         name: {{ include "connectivitymanager.fullname" . }}-app
     spec:
       {{- include "connectivitymanager.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "connectivitymanager.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '30']
       containers:
         - name: {{ include "connectivitymanager.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
