@@ -18,25 +18,23 @@ spec:
         name: {{ include "apigateway.fullname" . }}-app
     spec:
       {{- include "apigateway.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "apigateway.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '30']
       containers:
         - name: {{ include "apigateway.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           ports:
             - containerPort: {{ .Values.config.appPort }}
-          # readinessProbe:
-          #   httpGet:
-          #     path: /api/aga/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 15
-          # livenessProbe:
-          #   httpGet:
-          #     path: /api/aga/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   timeoutSeconds: 15
-          #   periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /api/aga/healthchecks/readiness
+              port: {{ .Values.config.appPort }}
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 15
           envFrom:
           - configMapRef:
               name: {{ include "apigateway.fullname" . }}-config
