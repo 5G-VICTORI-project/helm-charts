@@ -18,12 +18,23 @@ spec:
         name: {{ include "mobilitymanager.fullname" . }}-app
     spec:
       {{- include "mobilitymanager.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "mobilitymanager.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '30']
       containers:
         - name: {{ include "mobilitymanager.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           ports:
             - containerPort: {{ .Values.config.appPort }}
+          livenessProbe:
+            httpGet:
+              path: /api/mob/healthchecks/readiness
+              port: {{ .Values.config.appPort }}
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 15
           envFrom:
           - configMapRef:
               name: {{ include "mobilitymanager.fullname" . }}-config
