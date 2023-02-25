@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: {{ include "mobilitymanager.fullname" . }}-init
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          command: ['sleep', '30']
+          command: ['sleep', '60']
       containers:
         - name: {{ include "mobilitymanager.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
