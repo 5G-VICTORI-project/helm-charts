@@ -3,6 +3,24 @@ entries:
   apigateway:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-02-25T14:15:41.323078457Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios apigateway
+    digest: a40b1c7e9d183fe5fe1df3d9a0346f4dde94d2f8900fbdc548490cc1d00d222c
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: apigateway
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/apigateway-0.0.4/apigateway-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-02-15T15:34:18.216195028Z"
     dependencies:
     - condition: postgresql.enabled
@@ -555,4 +573,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-15T16:02:01.950705412Z"
+generated: "2023-02-25T14:15:41.323129258Z"
