@@ -19,4 +19,3 @@ data:
   VIOS_REPOSITORY_PORT: {{ .Values.config.repPort | quote }}
   VIOS_SERVICE_COMPOSER_HOST: {{ .Values.config.scoHost | quote }}
   VIOS_SERVICE_COMPOSER_PORT: {{ .Values.config.scoPort | quote }}
-  SYSTEM_ENV: {{ .Values.config.systemEnv | quote }}
