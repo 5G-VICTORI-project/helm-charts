@@ -204,6 +204,24 @@ entries:
   mobilitymanager:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-02-25T17:29:03.471725161Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios mobilitymanager
+    digest: f84dcca03e4a2fc69a68bf67bf0d1b038598548a0c20eb110fc4d0c9f0e6d285
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: mobilitymanager
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/mobilitymanager-0.0.4/mobilitymanager-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-02-15T15:42:40.232227709Z"
     dependencies:
     - condition: postgresql.enabled
@@ -573,4 +591,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-02-25T14:15:41.323129258Z"
+generated: "2023-02-25T17:29:03.471779661Z"
