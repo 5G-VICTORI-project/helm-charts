@@ -19,4 +19,3 @@ data:
   VIOS_REPOSITORY_PORT: {{ .Values.config.repPort | quote }}
   VIOS_MOBILITY_MANAGER_HOST: {{ .Values.config.mobHost | quote }}
   VIOS_MOBILITY_MANAGER_PORT: {{ .Values.config.mobPort | quote }}
-  SYSTEM_ENV: {{ .Values.config.systemEnv | quote }}
