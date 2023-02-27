@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: {{ include "servicebroker.fullname" . }}-init
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-          command: ['sleep', '30']
+          command: ['sleep', '60']
       containers:
         - name: {{ include "servicebroker.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}

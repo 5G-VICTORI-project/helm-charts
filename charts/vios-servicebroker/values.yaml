@@ -1,5 +1,4 @@
 postgresql:
-  # enabled is the flag to indicate of postgresql is to be used
   enabled: true
   auth:
     username: sbuser
@@ -7,63 +6,35 @@ postgresql:
     database: servicebroker
 
 config:
-  # replicaCount is the number of replicas to use
   replicaCount: 1
-
-  # appPort is the Django application port
   appPort: 8000
-
-  # NodePort is the type of service
   type: NodePort
-
-  # NodePort is the port the application should use in the cluster
   nodePort: 31967
-
-  # debug is the Django debug flag
   debug: "True"
-
-  # logLevel denotes the level of logging required
   logLevel: DEBUG
-
-  # smaHost is the endpoint name for the ServiceManager
   smaHost: servicemanager
-
-  # smaPort is the port on which to connect to the ServiceManager
   smaPort: 8000
-
-  # agaHost is the endpoint name for the ApiGateway
   agaHost: apigateway
-
-  # agaPort is the port on which to connect to the ApiGateway
   agaPort: 8000
-
-  # icmHost is the endpoint name for the ConnectivityManager
   icmHost: connectivitymanager
-
-  # icmPort is the port on which to connect to the ConnectivityManager
   icmPort: 8000
-
-  # repHost is the endpoint name for the Repository
   repHost: repository
-
-  # repPort is the port on which to connect to the Repository
   repPort: 8000
-
-  # mobHost is the endpoint name for the MobilityManager
   mobHost: mobilitymanager
-
-  # mobPort is the port on which to connect to the MobilityManager
   mobPort: 8000
 
-  # systemEnv is the flag to denote the type of deployment environment
-  systemEnv: KUBERNETES
-
 image:
-  # repository is the online location of the Docker image
   repository: digicatapult/vios-servicebroker
-
-  # pullPolicy is the flag to determine how images are pulled
   pullPolicy: Always
+  tag: 0.1.3
 
-  # tag is the version to use
-  tag: 0.1.2
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
