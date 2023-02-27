@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.config.replicaCount }}
   selector:
     matchLabels:
-      name: {{ include "edgeproxy.selectorLabels" . | nindent 6 }}
+      name: {{ include "edgeproxy.fullname" . }}-app
   template:
     metadata:
       annotations:
