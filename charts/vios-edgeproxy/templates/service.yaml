@@ -14,4 +14,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    name: {{ include "edgeproxy.selectorLabels" . | nindent 4 }}
+    name: {{ include "edgeproxy.fullname" . }}-app
