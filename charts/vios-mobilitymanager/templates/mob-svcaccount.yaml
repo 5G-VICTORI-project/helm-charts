@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: {{ include "apigateway.serviceAccountName" . }}
+  name: {{ include "mobilitymanager.serviceAccountName" . }}
   labels:
-    {{- include "apigateway.labels" . | nindent 4 }}
+    {{- include "mobilitymanager.labels" . | nindent 4 }}
   {{- with .Values.serviceAccount.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
