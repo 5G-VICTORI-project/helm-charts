@@ -23,7 +23,7 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           command: ['sleep', '60']
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ include "edgeproxy.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
