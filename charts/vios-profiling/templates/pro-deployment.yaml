@@ -18,25 +18,23 @@ spec:
         name: {{ include "profiler.fullname" . }}-app
     spec:
       {{- include "profiler.imagePullSecrets" . | indent 6 }}
+      initContainers:
+        - name: {{ include "profiler.fullname" . }}-init
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          command: ['sleep', '60']
       containers:
         - name: {{ include "profiler.fullname" . }}-app
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           ports:
             - containerPort: {{ .Values.config.appPort }}
-          # readinessProbe:
-          #   httpGet:
-          #     path: /api/sbr/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   periodSeconds: 15
-          # livenessProbe:
-          #   httpGet:
-          #     path: /api/sbr/healthcheck
-          #     port: {{ .Values.config.appPort }}
-          #   initialDelaySeconds: 15
-          #   timeoutSeconds: 15
-          #   periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /api/pro/healthchecks/readiness
+              port: {{ .Values.config.appPort }}
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 15
           envFrom:
           - configMapRef:
               name: {{ include "profiler.fullname" . }}-config
