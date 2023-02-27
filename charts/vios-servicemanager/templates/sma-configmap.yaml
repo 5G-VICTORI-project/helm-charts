@@ -17,4 +17,3 @@ data:
   VIOS_CONNECTIVITY_MANAGER_PORT: {{ .Values.config.icmPort | quote }}
   VIOS_PROFILER_HOST: {{ .Values.config.proHost | quote }}
   VIOS_PROFILER_PORT: {{ .Values.config.proPort | quote }}
-  SYSTEM_ENV: {{ .Values.config.systemEnv | quote }}
