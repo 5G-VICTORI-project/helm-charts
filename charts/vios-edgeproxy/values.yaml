@@ -15,36 +15,36 @@ config:
   logLevel: DEBUG
   vlanStart: 143
   vlanEnd: 144
-  openstackServer: ""
-  openstackUser: 5gvictori-user
-  openstackPassword: ""
+  openstackServer: tbc
+  openstackUser: tbc
+  openstackPassword: tbc
   openstackDomain: default
-  openstackProject: 5G-VICTORI
+  openstackProject: tbc
   openstackNetworkType: vlan
   openstackNetworkProvider: 5GVICTORI
-  openstackMgmtNetwork: 5G-VICTORI-Management
+  openstackMgmtNetwork: tbc
   openstackUoBDns: ""
-  vyosServer: ""
+  vyosServer: tbc
   vyosEthernetPort: eth0
-  vyosInstanceName: ""
+  vyosInstanceName: tbc
   vyosKey: demo_key
-  osmVersion: 10
-  osmServer: ""
+  osmVersion: 13
+  osmServer: tbc
   osmUsername: admin
   osmPasswd: admin
   osmProject: admin
-  apigatewayHost: ""
+  apigatewayHost: tbc
   apigatewayPort: 30007
-  vimAccount: ""
-  netosAddr: ""
+  vimAccount: tbc
+  netosAddr: tbc
   netosCertPath: "False"
   netosUser: admin
   netosPassword: admin
   appEndpoint: api/application/
-  epaServerIp: ""
-  dnsServerIp: ""
+  epaServerIp: tbc
+  dnsServerIp: tbc
   dnsServerPort: 80
-  i2SmIp: ""
+  i2SmIp: tbc
   i2SmPort: 30989
 
 image:
