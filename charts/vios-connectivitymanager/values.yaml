@@ -17,7 +17,7 @@ config:
   smaPort: 8000
   agaHost: apigateway
   agaPort: 8000
-  vyosServer: 10.68.113.147
+  vyosServer: tbc
   vyosKey: demo_key
   vyosEthernetPort: eth0
   tunnelSubnet: 172.16.253.0/24
