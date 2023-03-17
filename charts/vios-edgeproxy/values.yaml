@@ -13,22 +13,22 @@ config:
   dbPort: 5432
   debug: "True"
   logLevel: DEBUG
-  vlanStart: 143
-  vlanEnd: 144
+  vlanStart: tbc
+  vlanEnd: tbc
   openstackServer: tbc
   openstackUser: tbc
   openstackPassword: tbc
   openstackDomain: default
   openstackProject: tbc
   openstackNetworkType: vlan
-  openstackNetworkProvider: 5GVICTORI
+  openstackNetworkProvider: tbc
   openstackMgmtNetwork: tbc
   openstackUoBDns: ""
   vyosServer: tbc
   vyosEthernetPort: eth0
   vyosInstanceName: tbc
   vyosKey: demo_key
-  osmVersion: 13
+  osmVersion: tbc
   osmServer: tbc
   osmUsername: admin
   osmPasswd: admin
