@@ -24,7 +24,7 @@ config:
 image:
   repository: digicatapult/vios-servicemanager
   pullPolicy: Always
-  tag: 0.1.5
+  tag: 0.1.6
 
 autoscaling:
   enabled: false
