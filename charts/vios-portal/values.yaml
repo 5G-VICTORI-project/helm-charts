@@ -20,7 +20,7 @@ config:
 image:
   repository: digicatapult/vios-portal
   pullPolicy: Always
-  tag: 0.1.7
+  tag: 0.1.8
 
   command: ['./start.sh']
 
