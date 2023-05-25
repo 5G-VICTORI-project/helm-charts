@@ -8,21 +8,19 @@ postgresql:
 config:
   replicaCount: 1
   appPort: 5000
-  dbName: portal
-  dbPort: 5432
   type: NodePort
   extAppPort: 30010
   systemEnv: KUBERNETES
-  dbEngine: postgresql
   livenessPath: /liveness
   readinessPath: /readiness
   readinessFailureThreshold: 5
   readinessPeriodSeconds: 5
+  portalDev: UoB
 
 image:
   repository: digicatapult/vios-portal
   pullPolicy: Always
-  tag: 0.1.5
+  tag: 0.1.6
 
   command: ['./start.sh']
 
