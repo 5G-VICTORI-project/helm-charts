@@ -70,7 +70,7 @@ image:
   pullPolicy: Always
 
   # tag is the version to use
-  tag: 0.1.2
+  tag: 0.1.3
 
 autoscaling:
   # enabled specifies whether autoscaling should be enabled
