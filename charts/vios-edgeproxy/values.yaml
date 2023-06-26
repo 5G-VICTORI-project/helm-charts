@@ -50,7 +50,7 @@ config:
 image:
   repository: digicatapult/vios-edgeproxy
   pullPolicy: Always
-  tag: 0.1.0
+  tag: 0.1.1
 
 autoscaling:
   enabled: false
