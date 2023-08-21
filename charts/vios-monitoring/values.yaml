@@ -22,7 +22,7 @@ config:
 image:
   repository: digicatapult/vios-monitoring
   pullPolicy: Always
-  tag: 0.1.7
+  tag: 0.1.8
 
 autoscaling:
   enabled: false
