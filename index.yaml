@@ -403,6 +403,24 @@ entries:
   monitoring:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-08-21T14:46:28.522741454Z"
+    dependencies:
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.x.x
+    description: A generated Helm Chart for 5g-vios monitoring
+    digest: c3ccb5ab03e4166ae5c9360c9a48647ae65d2c6ff1a7fa9f135d536cbd56aaca
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: monitoring
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/monitoring-0.0.8/monitoring-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-07-03T14:23:17.500007532Z"
     dependencies:
     - condition: mongodb.enabled
@@ -1131,4 +1149,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-07-06T11:49:35.770482987Z"
+generated: "2023-08-21T14:46:28.523156956Z"
