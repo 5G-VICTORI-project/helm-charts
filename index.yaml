@@ -1043,6 +1043,24 @@ entries:
   servicemanager:
   - apiVersion: v2
     appVersion: 0.2.14
+    created: "2023-08-23T14:16:20.958786874Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.1.14
+    description: A generated Helm Chart for 5g-vios servicemanager
+    digest: 6704b97b18487a4eadb12b509c41a34f2220a62ab1e00b2e9af63a9377d8ed89
+    maintainers:
+    - name: 5g-victori-project
+      url: 5g-victori-project.github.io/vios-helmcharts
+    name: servicemanager
+    type: application
+    urls:
+    - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.13/servicemanager-0.0.13.tgz
+    version: 0.0.13
+  - apiVersion: v2
+    appVersion: 0.2.14
     created: "2023-08-23T13:45:13.826765183Z"
     dependencies:
     - condition: postgresql.enabled
@@ -1239,4 +1257,4 @@ entries:
     urls:
     - https://github.com/5G-VICTORI-project/vios-helmcharts/releases/download/servicemanager-0.0.2/servicemanager-0.0.2.tgz
     version: 0.0.2
-generated: "2023-08-23T13:45:13.826956286Z"
+generated: "2023-08-23T14:16:20.958945675Z"
